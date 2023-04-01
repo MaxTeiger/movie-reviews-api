@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  movie-reviews-api:
+    build: .
+    image: movie-reviews-api
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/
+    ports:
+      - '8000:8000'
+    depends_on:
+      - mongodb
+    networks:
+      - node-network
+
+  mongodb:
+    image: mongo:6-jammy
+    ports:
+      - '27017:27017'
+    volumes:
+      - db-data:/data/db
+    networks:
+      - node-network
+
+volumes:
+  db-data:
+
+networks:
+  node-network:
+    driver: bridge
