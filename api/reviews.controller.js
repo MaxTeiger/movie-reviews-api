@@ -2,6 +2,7 @@ import ReviewsDAO from "../dao/reviewsDAO.js"
 
 export default class ReviewsController {
 	static async healthCheck(req, res, next) {
+		console.info("healthCheck endpoint reached")
 		res.status(200).json({ status: "ok" })
 	}
 
