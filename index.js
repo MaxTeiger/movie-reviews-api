@@ -8,7 +8,6 @@ const MongoClient = mongodb.MongoClient
 // const mongo_host = process.env['MONGO_HOST']
 const uri = process.env['MONGO_URI']
 
-console.log(uri);
 const port = 8000
 
 MongoClient.connect(

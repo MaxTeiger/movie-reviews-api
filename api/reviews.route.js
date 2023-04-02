@@ -11,5 +11,6 @@ router.route("/:id")
     .get(ReviewsCtrl.apiGetReview)
     .put(ReviewsCtrl.apiUpdateReview)
     .delete(ReviewsCtrl.apiDeleteReview)
+router.route("/").get(ReviewsCtrl.healthCheck)
 
 export default router
